@@ -3,70 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+
 <title>Gossip & Grub | Customer Feedback</title>
 
 <style>
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #111;
+    background:
+        radial-gradient(circle at top, #292929 0%, #111 45%, #090909 100%);
     color: #fff;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 12px 40px;
 }
 
 .container {
-    width: 100%;
     max-width: 520px;
-    background: #1c1c1c;
-    border-radius: 24px;
-    padding: 30px 24px;
-    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    margin: auto;
+}
+
+/* ================= LOGO ================= */
+
+.logo-box {
+    text-align: center;
+    padding: 18px 10px 25px;
+}
+
+.logo-main {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo-main span {
+    color: #ff9d2e;
+    margin: 0 3px;
+}
+
+.logo-sub {
+    margin-top: 9px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #cfcfcf;
+    font-weight: 600;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    background: rgba(27, 27, 27, 0.97);
     border: 1px solid #333;
+    border-radius: 24px;
+    padding: 24px 18px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.45);
 }
 
-.logo {
-    display: block;
-    max-width: 180px;
-    max-height: 100px;
-    margin: 0 auto 15px;
-}
-
-h1 {
+.heading {
     text-align: center;
-    margin: 5px 0 8px;
-    font-size: 28px;
+    margin-bottom: 22px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #bbb;
-    margin-bottom: 28px;
+.heading h1 {
+    font-size: 24px;
+    margin-bottom: 7px;
 }
+
+.heading p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ================= INPUTS ================= */
 
 label {
     display: block;
-    margin-top: 18px;
-    margin-bottom: 8px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 18px 0 8px;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #444;
-    background: #292929;
+    background: #111;
+    border: 1px solid #3b3b3b;
+    border-radius: 13px;
     color: white;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 15px;
     outline: none;
 }
 
@@ -76,85 +108,90 @@ textarea:focus {
 }
 
 textarea {
-    min-height: 120px;
+    min-height: 110px;
     resize: vertical;
 }
 
-/* STAR RATING */
+/* ================= RATINGS ================= */
+
+.rating-title {
+    margin-top: 22px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.rating-box {
+    background: #111;
+    border: 1px solid #303030;
+    border-radius: 16px;
+    padding: 14px 12px;
+    margin-bottom: 10px;
+}
+
+.rating-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rating-value {
+    font-size: 11px;
+    color: #888;
+}
 
 .stars {
     display: flex;
-    gap: 7px;
-    margin-top: 5px;
+    gap: 4px;
+    margin-top: 9px;
 }
 
 .star {
     border: none;
     background: transparent;
     color: #555;
-    font-size: 38px;
+    font-size: 28px;
+    line-height: 1;
     cursor: pointer;
-    padding: 0;
+    padding: 2px;
+    transition: .15s;
+}
+
+.star:hover {
+    transform: scale(1.12);
 }
 
 .star.active {
-    color: #ffb000;
+    color: #ffb22e;
 }
 
-.ratingText {
-    color: #aaa;
-    font-size: 14px;
-    margin-top: 4px;
-}
+/* ================= BUTTON ================= */
 
-/* COMMON BUTTON */
-
-.btn {
-    display: block;
+.submit-btn {
     width: 100%;
-    margin-top: 14px;
-    padding: 16px;
     border: none;
-    border-radius: 14px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* WHATSAPP */
-
-.whatsapp-btn {
+    border-radius: 15px;
+    padding: 16px;
+    margin-top: 24px;
     background: #25D366;
-    color: #071108;
-    margin-top: 25px;
-}
-
-/* GOOGLE */
-
-.google-btn {
-    background: white;
-    color: #111;
-}
-
-/* INSTAGRAM */
-
-.instagram-btn {
-    background: #262626;
     color: white;
-    border: 1px solid #555;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(37,211,102,.18);
 }
 
-.note {
-    text-align: center;
-    color: #888;
-    font-size: 12px;
-    line-height: 1.5;
-    margin-top: 18px;
+.submit-btn:active {
+    transform: scale(.98);
 }
 
-/* SUCCESS */
+/* ================= SUCCESS ================= */
 
 .success {
     display: none;
@@ -163,15 +200,61 @@ textarea {
 
 .success-icon {
     font-size: 55px;
+    margin-bottom: 10px;
 }
 
 .success h2 {
-    margin: 8px 0;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
 .success p {
-    color: #bbb;
-    line-height: 1.6;
+    color: #aaa;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 14px;
+    margin-top: 11px;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.google-btn {
+    background: white;
+    color: #111;
+}
+
+.instagram-btn {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+}
+
+.note {
+    margin-top: 17px;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 11px;
 }
 </style>
 </head>
@@ -181,274 +264,266 @@ textarea {
 <div class="container">
 
     <!-- LOGO -->
-    <!-- Keep logo.png in the same GitHub folder -->
-    <img
-        src="logo.png"
-        class="logo"
-        alt="Gossip & Grub Logo"
-        onerror="this.style.display='none'"
-    >
+    <div class="logo-box">
+        <div class="logo-main">
+            GOSSIP <span>&</span> GRUB
+        </div>
+        <div class="logo-sub">
+            GOOD FOOD • GOOD GOSSIP
+        </div>
+    </div>
 
+    <!-- FEEDBACK FORM -->
+    <div class="card" id="feedbackCard">
 
-    <!-- =========================
-         FEEDBACK FORM
-    ========================== -->
-
-    <div id="feedbackSection">
-
-        <h1>How Was Your Experience?</h1>
-
-        <p class="subtitle">
-            Gossip & Grub ❤️<br>
-            Your feedback means a lot to us!
-        </p>
-
+        <div class="heading">
+            <h1>We'd Love Your Feedback ❤️</h1>
+            <p>
+                Tell us about your experience at Gossip & Grub.
+                Your feedback helps us serve you better!
+            </p>
+        </div>
 
         <form id="feedbackForm">
 
-            <!-- NAME -->
-
-            <label>Your Name</label>
-
+            <label for="name">Your Name</label>
             <input
                 type="text"
                 id="name"
                 placeholder="Enter your name"
-                required
             >
 
-
-            <!-- RATING -->
-
-            <label>Your Rating</label>
-
-            <div class="stars">
-
-                <button
-                    type="button"
-                    class="star"
-                    data-rating="1"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star"
-                    data-rating="2"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star"
-                    data-rating="3"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star"
-                    data-rating="4"
-                >★</button>
-
-                <button
-                    type="button"
-                    class="star"
-                    data-rating="5"
-                >★</button>
-
-            </div>
-
-            <div
-                class="ratingText"
-                id="ratingText"
-            >
-                Please select your rating
-            </div>
-
-            <input
-                type="hidden"
-                id="rating"
-            >
-
-
-            <!-- ORDER -->
-
-            <label>What Did You Order?</label>
-
+            <label for="order">What did you order?</label>
             <input
                 type="text"
                 id="order"
-                placeholder="e.g. Spiral Potato, Corn Dog, Burger"
+                placeholder="Example: Spiral Potato, Corn Dog..."
             >
 
+            <!-- RATINGS -->
+
+            <div class="rating-title">
+                Rate Your Experience ⭐
+            </div>
+
+            <!-- FOOD -->
+            <div class="rating-box">
+                <div class="rating-top">
+                    <span class="rating-name">🍟 Food</span>
+                    <span class="rating-value" id="foodValue">
+                        Select rating
+                    </span>
+                </div>
+
+                <div class="stars" data-category="food">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                </div>
+            </div>
+
+            <!-- TASTE -->
+            <div class="rating-box">
+                <div class="rating-top">
+                    <span class="rating-name">😋 Taste</span>
+                    <span class="rating-value" id="tasteValue">
+                        Select rating
+                    </span>
+                </div>
+
+                <div class="stars" data-category="taste">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                </div>
+            </div>
+
+            <!-- AMBIENCE -->
+            <div class="rating-box">
+                <div class="rating-top">
+                    <span class="rating-name">✨ Ambience</span>
+                    <span class="rating-value" id="ambienceValue">
+                        Select rating
+                    </span>
+                </div>
+
+                <div class="stars" data-category="ambience">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                </div>
+            </div>
+
+            <!-- SERVICE -->
+            <div class="rating-box">
+                <div class="rating-top">
+                    <span class="rating-name">🤝 Service</span>
+                    <span class="rating-value" id="serviceValue">
+                        Select rating
+                    </span>
+                </div>
+
+                <div class="stars" data-category="service">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                </div>
+            </div>
+
+            <!-- STAFF -->
+            <div class="rating-box">
+                <div class="rating-top">
+                    <span class="rating-name">👨‍🍳 Staff</span>
+                    <span class="rating-value" id="staffValue">
+                        Select rating
+                    </span>
+                </div>
+
+                <div class="stars" data-category="staff">
+                    <button type="button" class="star" data-value="1">★</button>
+                    <button type="button" class="star" data-value="2">★</button>
+                    <button type="button" class="star" data-value="3">★</button>
+                    <button type="button" class="star" data-value="4">★</button>
+                    <button type="button" class="star" data-value="5">★</button>
+                </div>
+            </div>
 
             <!-- FEEDBACK -->
 
-            <label>Your Feedback</label>
+            <label for="feedback">
+                Tell us more about your experience
+            </label>
 
             <textarea
                 id="feedback"
-                placeholder="Tell us what you loved or what we can improve..."
-                required
+                placeholder="What did you like? What can we improve?"
             ></textarea>
 
-
-            <!-- WHATSAPP -->
-
-            <button
-                type="submit"
-                class="btn whatsapp-btn"
-            >
+            <button type="submit" class="submit-btn">
                 💬 Send Feedback on WhatsApp
             </button>
 
         </form>
-
-
-        <div class="note">
-            WhatsApp will open with your feedback already written.
-            Please tap <b>Send</b> in WhatsApp.
-        </div>
-
     </div>
 
+    <!-- SUCCESS SCREEN -->
 
-    <!-- =========================
-         SUCCESS SCREEN
-    ========================== -->
+    <div class="card success" id="successCard">
 
-    <div
-        id="successSection"
-        class="success"
-    >
+        <div class="success-icon">🎉</div>
 
-        <div class="success-icon">
-            ❤️
-        </div>
-
-        <h2>
-            Thank You!
-        </h2>
+        <h2>Thank You!</h2>
 
         <p>
-            Your feedback is ready in WhatsApp.
+            Your feedback is really valuable to us ❤️
             <br><br>
-
-            Please tap <b>Send</b> in WhatsApp.
-            <br><br>
-
-            After that, we'd really appreciate your
-            Google review ⭐
+            WhatsApp has been opened with your feedback.
+            Please tap <b>Send</b> to share it with us.
         </p>
 
-
-        <!-- GOOGLE REVIEW -->
+        <a
+            id="whatsappAgain"
+            class="action-btn whatsapp-btn"
+            href="#"
+            target="_blank"
+        >
+            💬 Open WhatsApp Again
+        </a>
 
         <a
             href="https://g.page/r/CQAYY5KJ6a8ZECE/review"
             target="_blank"
-            rel="noopener"
-            class="btn google-btn"
+            class="action-btn google-btn"
         >
-            ⭐ Leave a Google Review
+            ⭐ Leave Us a Google Review
         </a>
-
-
-        <!-- INSTAGRAM -->
 
         <a
             href="https://www.instagram.com/gossipandgrub.cafe/"
             target="_blank"
-            rel="noopener"
-            class="btn instagram-btn"
+            class="action-btn instagram-btn"
         >
-            📸 Follow us on Instagram
+            📸 Follow Us on Instagram
         </a>
 
+        <div class="note">
+            Thank you for visiting Gossip & Grub! ❤️
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © Gossip & Grub • Thank you for your support ❤️
     </div>
 
 </div>
 
-
 <script>
 
-/* =========================================
-   GOSSIP & GRUB WHATSAPP NUMBER
-========================================= */
+/* ================= SETTINGS ================= */
 
+/*
+   WhatsApp number:
+   Country code +91
+   Without +, spaces or -
+*/
 const whatsappNumber = "917217634608";
 
-
-/* =========================================
-   STAR RATING
-========================================= */
-
-const stars =
-document.querySelectorAll(".star");
-
-const ratingInput =
-document.getElementById("rating");
-
-const ratingText =
-document.getElementById("ratingText");
+const ratings = {
+    food: 0,
+    taste: 0,
+    ambience: 0,
+    service: 0,
+    staff: 0
+};
 
 
-stars.forEach(function(star) {
+/* ================= STAR RATINGS ================= */
 
-    star.addEventListener("click", function() {
+document.querySelectorAll(".stars").forEach(starGroup => {
 
-        const rating =
-        Number(
-            this.getAttribute("data-rating")
-        );
+    const category = starGroup.dataset.category;
+    const stars = starGroup.querySelectorAll(".star");
 
-        ratingInput.value = rating;
+    stars.forEach(star => {
 
+        star.addEventListener("click", function () {
 
-        stars.forEach(function(s) {
+            const value = Number(this.dataset.value);
 
-            const starRating =
-            Number(
-                s.getAttribute("data-rating")
-            );
+            ratings[category] = value;
 
-            if (starRating <= rating) {
-
-                s.classList.add("active");
-
-            } else {
-
+            stars.forEach(s => {
                 s.classList.remove("active");
+            });
 
-            }
+            stars.forEach(s => {
+
+                if (Number(s.dataset.value) <= value) {
+                    s.classList.add("active");
+                }
+
+            });
+
+            document.getElementById(category + "Value").textContent =
+                value + " / 5 ⭐";
 
         });
-
-
-        const messages = {
-
-            1: "1/5 — We'll work harder ❤️",
-
-            2: "2/5 — We can improve",
-
-            3: "3/5 — Good",
-
-            4: "4/5 — Very Good 😊",
-
-            5: "5/5 — Excellent! ❤️"
-
-        };
-
-
-        ratingText.innerText =
-        messages[rating];
 
     });
 
 });
 
 
-/* =========================================
-   FEEDBACK SUBMIT
-========================================= */
+/* ================= FORM SUBMIT ================= */
 
 document
 .getElementById("feedbackForm")
@@ -456,101 +531,99 @@ document
 
     event.preventDefault();
 
+    /* Check all ratings */
 
-    const name =
-    document
-    .getElementById("name")
-    .value
-    .trim();
+    const missingRating = Object.values(ratings).some(
+        value => value === 0
+    );
 
-
-    const rating =
-    document
-    .getElementById("rating")
-    .value;
-
-
-    const order =
-    document
-    .getElementById("order")
-    .value
-    .trim();
-
-
-    const feedback =
-    document
-    .getElementById("feedback")
-    .value
-    .trim();
-
-
-    /* Rating check */
-
-    if (!rating) {
+    if (missingRating) {
 
         alert(
-            "Please select your rating ⭐"
+            "Please rate Food, Taste, Ambience, Service and Staff ⭐"
         );
 
         return;
-
     }
 
 
-    /* =========================================
-       WHATSAPP MESSAGE
-    ========================================= */
+    /* Get customer information */
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const order =
+        document.getElementById("order").value.trim();
+
+    const feedback =
+        document.getElementById("feedback").value.trim();
+
+
+    /* WhatsApp message */
 
     const message =
-
 `🍔 *GOSSIP & GRUB — CUSTOMER FEEDBACK*
 
-👤 Name: ${name}
+👤 *Name:* ${name || "Not mentioned"}
 
-⭐ Rating: ${rating}/5
+🍴 *Order:* ${order || "Not mentioned"}
 
-🍴 Order: ${order || "Not mentioned"}
+⭐ *RATINGS*
 
-💬 Feedback:
-${feedback}
+🍟 Food: ${ratings.food}/5
+😋 Taste: ${ratings.taste}/5
+✨ Ambience: ${ratings.ambience}/5
+🤝 Service: ${ratings.service}/5
+👨‍🍳 Staff: ${ratings.staff}/5
 
-Thank you for visiting Gossip & Grub! ❤️`;
+💬 *Overall Feedback:*
+${feedback || "No written feedback"}
+
+❤️ Thank you for visiting Gossip & Grub!`;
 
 
-    /* =========================================
-       WHATSAPP LINK
-    ========================================= */
+    /* Create WhatsApp URL */
 
     const whatsappURL =
-
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-
-    /* =========================================
-       SHOW THANK YOU SCREEN
-    ========================================= */
-
-    document
-    .getElementById("feedbackSection")
-    .style.display = "none";
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
 
 
-    document
-    .getElementById("successSection")
-    .style.display = "block";
+    /* Set fallback WhatsApp button */
+
+    document.getElementById("whatsappAgain").href =
+        whatsappURL;
 
 
-    /* =========================================
-       OPEN WHATSAPP
-    ========================================= */
+    /* Hide form */
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+    document.getElementById("feedbackCard").style.display =
+        "none";
+
+
+    /* Show success */
+
+    document.getElementById("successCard").style.display =
+        "block";
+
+
+    /*
+       Open WhatsApp.
+
+       If browser blocks automatic opening,
+       customer can use "Open WhatsApp Again".
+    */
+
+    setTimeout(function() {
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }, 300);
 
 });
 
